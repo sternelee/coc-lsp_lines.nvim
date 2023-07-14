@@ -1,11 +1,10 @@
 const { diagnosticManager, workspace, Disposable, commands } = require('coc.nvim')
 
 exports.activate = async context => {
-  const { nvim, getConfiguration } = workspace
+  const { nvim } = workspace
   const NS = await nvim.createNamespace('coc-lsp-lines')
   const { subscriptions } = context
-  const configuration = getConfiguration('lsp-lines');
-  let enabled =configuration.get('enabled', true)
+  let enabled = true
   subscriptions.push(
     diagnosticManager.onDidRefresh(e => {
       if (!enabled) return

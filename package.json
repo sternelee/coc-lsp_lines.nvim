@@ -1,6 +1,6 @@
 {
   "name": "lsp_lines",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Show diagnostics using virtual lines",
   "main": "coc-extension/index.js",
   "type": "commonjs",
