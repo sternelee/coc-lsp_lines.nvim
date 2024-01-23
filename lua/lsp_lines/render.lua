@@ -45,6 +45,7 @@ end
 ---@param opts boolean|Opts
 ---@param source 'native'|'coc'|nil If nil, defaults to 'native'.
 function M.show(namespace, bufnr, diagnostics, opts, source)
+  if not vim.api.nvim_buf_is_loaded(bufnr) then return end
   vim.validate({
     namespace = { namespace, "n" },
     bufnr = { bufnr, "n" },
